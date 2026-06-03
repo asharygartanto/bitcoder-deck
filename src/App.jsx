@@ -114,7 +114,7 @@ function App() {
           initial="enter"
           animate="center"
           exit="exit"
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="absolute inset-0 z-10"
         >
           <SlideWrapper>

@@ -90,7 +90,7 @@ export default function StudioSlide() {
                   <motion.div
                     className="deck-card flex items-center gap-7"
                     whileHover={{ scale: 1.02, x: 4 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.8 }}
                   >
                     <div className={`w-14 h-14 rounded-xl ${c.bg10} flex items-center justify-center ${c.text} shrink-0`}>
                       {item.icon}

@@ -74,7 +74,7 @@ export default function PricingSlide() {
                   : ''
               }`}
               whileHover={{ scale: 1.03, y: -6 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.8 }}
             >
               {plan.highlight && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3.5 py-1 bg-purple text-[#fff] text-xs font-bold rounded-full shadow-[0_6px_16px_-3px_rgba(168,85,247,0.5)]">

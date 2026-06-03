@@ -55,7 +55,7 @@ export default function PixelBitBusinessSlide() {
           className="flex items-center justify-center gap-4 flex-wrap"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="relative inline-flex">
             <div className="absolute inset-0 -m-4 rounded-full bg-pink/20 blur-2xl pointer-events-none" />
@@ -77,7 +77,7 @@ export default function PixelBitBusinessSlide() {
             <motion.div
               className="deck-card h-full flex flex-col gap-4 relative overflow-hidden"
               whileHover={{ scale: 1.02, y: -4 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.8 }}
             >
               <div className="flex items-center gap-4">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${

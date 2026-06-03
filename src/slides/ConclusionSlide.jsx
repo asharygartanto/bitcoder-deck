@@ -17,7 +17,7 @@ export default function ConclusionSlide() {
 
       <FloatingShape
         className="absolute top-12 left-[15%] w-14 h-14 rounded-xl bg-tosca-10 border border-tosca-20"
-        delay={0}
+        delay={0.8}
         duration={5}
       />
       <FloatingShape
@@ -27,7 +27,7 @@ export default function ConclusionSlide() {
       />
       <FloatingShape
         className="absolute top-24 right-[25%] w-8 h-8 rounded-lg bg-pink-10 border border-pink-20 rotate-45"
-        delay={0.5}
+        delay={0.8}
         duration={4}
       />
 
@@ -48,7 +48,7 @@ export default function ConclusionSlide() {
         className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-2 max-w-5xl w-full"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.6 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
       >
         {cards.map((item, i) => {
           const c = getColorClasses(item.colorKey)

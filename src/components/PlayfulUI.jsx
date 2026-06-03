@@ -42,7 +42,7 @@ export function AnimatedTitle({ children, className = '', delay = 0 }) {
       className={`font-heading font-bold text-white ${className}`}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.h1>
@@ -55,7 +55,7 @@ export function AnimatedText({ children, className = '', delay = 0 }) {
       className={`font-body ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.p>
@@ -68,7 +68,7 @@ export function AnimatedCard({ children, className = '', delay = 0 }) {
       className={`deck-card-lg ${className}`}
       initial={{ opacity: 0, y: 30, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ scale: 1.02, borderColor: 'rgba(0, 184, 148, 0.5)', boxShadow: '0 16px 40px -12px rgba(0, 184, 148, 0.25)' }}
     >
       {children}

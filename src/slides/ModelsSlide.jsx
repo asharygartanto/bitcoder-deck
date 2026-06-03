@@ -68,7 +68,7 @@ export default function ModelsSlide() {
               <motion.div
                 className="deck-card relative h-full min-h-[440px] flex flex-col overflow-hidden"
                 whileHover={{ scale: 1.03, y: -6 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.8 }}
               >
                 <div className={`absolute top-0 left-0 right-0 h-1.5 ${c.bar}`} />
                 <div className={`w-16 h-16 rounded-2xl ${c.bg10} flex items-center justify-center ${c.text} mb-5`}>

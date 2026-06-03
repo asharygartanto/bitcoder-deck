@@ -63,7 +63,7 @@ export default function ExtensionsSlide() {
               <motion.div
                 className="deck-card-lg relative h-full min-h-[340px] overflow-hidden"
                 whileHover={{ scale: 1.02, y: -4 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.8 }}
               >
                 {ext.isNew && (
                   <div className="absolute top-5 right-5">
