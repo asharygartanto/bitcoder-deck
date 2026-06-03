@@ -1,0 +1,274 @@
+@import "tailwindcss";
+
+@theme {
+  /* chat.bitcoder.id light theme palette */
+  --color-background: #f4f6f9;
+  --color-foreground: #0f1419;
+  --color-muted: #e8edf3;
+  --color-muted-foreground: #64748b;
+  --color-card: #ffffff;
+  --color-sidebar: #eef2f7;
+  --color-workspace: #f8fafc;
+  --color-border-default: #cbd5e1;
+  --color-border-subtle: #e2e8f0;
+  --color-accent: #ea580c;
+
+  /* Remap shorthand tokens so existing classes flip to light theme */
+  --color-white: #0f1419;        /* text-white / bg-white / border-white → dark foreground */
+  --color-dark: #0f1419;          /* text-dark stays dark; used on accent buttons */
+  --color-dark-card: #ffffff;     /* bg-dark-card → white card */
+  --color-dark-surface: #eef2f7;  /* sidebar tone */
+
+  /* Brand colors (unchanged) */
+  --color-tosca: #00b894;
+  --color-tosca-dark: #00a07e;
+  --color-tosca-light: #34d399;
+  --color-purple: #a855f7;
+  --color-pink: #db2777;
+  --color-blue: #3b82f6;
+  --color-orange: #ea580c;
+  --color-yellow: #d97706;
+  --color-green: #059669;
+
+  --font-heading: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* Bumped text scale (~15% larger than Tailwind defaults) */
+  --text-xs: 0.85rem;     /* was 0.75 */
+  --text-sm: 1rem;        /* was 0.875 */
+  --text-base: 1.15rem;   /* was 1 */
+  --text-lg: 1.3rem;      /* was 1.125 */
+  --text-xl: 1.45rem;     /* was 1.25 */
+  --text-2xl: 1.75rem;    /* was 1.5 */
+  --text-3xl: 2.15rem;    /* was 1.875 */
+  --text-4xl: 2.65rem;    /* was 2.25 */
+  --text-5xl: 3.25rem;    /* was 3 */
+  --text-6xl: 4rem;       /* was 3.75 */
+  --text-7xl: 5rem;       /* was 4.5 */
+  --text-8xl: 6.25rem;    /* was 6 */
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+ul, ol {
+  padding: 0;
+  list-style: none;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-body);
+  font-size: 17px;
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(0, 184, 148, 0.10), transparent 55%),
+    radial-gradient(ellipse at 80% 100%, rgba(168, 85, 247, 0.08), transparent 55%),
+    var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  img {
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+::-webkit-scrollbar { display: none; }
+
+/* Brand color tints — used by Badge / accents */
+.bg-tosca-5  { background-color: rgba(0, 184, 148, 0.08); }
+.bg-tosca-10 { background-color: rgba(0, 184, 148, 0.12); }
+.bg-tosca-20 { background-color: rgba(0, 184, 148, 0.20); }
+.bg-tosca-30 { background-color: rgba(0, 184, 148, 0.30); }
+.bg-tosca-60 { background-color: rgba(0, 184, 148, 0.60); }
+
+.bg-purple-5  { background-color: rgba(168, 85, 247, 0.08); }
+.bg-purple-10 { background-color: rgba(168, 85, 247, 0.12); }
+.bg-purple-20 { background-color: rgba(168, 85, 247, 0.20); }
+.bg-purple-30 { background-color: rgba(168, 85, 247, 0.30); }
+
+.bg-pink-10 { background-color: rgba(219, 39, 119, 0.12); }
+.bg-pink-20 { background-color: rgba(219, 39, 119, 0.20); }
+
+.bg-blue-10 { background-color: rgba(59, 130, 246, 0.12); }
+.bg-blue-20 { background-color: rgba(59, 130, 246, 0.20); }
+
+.bg-orange-10 { background-color: rgba(234, 88, 12, 0.12); }
+.bg-yellow-10 { background-color: rgba(217, 119, 6, 0.12); }
+.bg-yellow-20 { background-color: rgba(217, 119, 6, 0.20); }
+
+.bg-dark-card-50 { background-color: rgba(255, 255, 255, 0.55); }
+.bg-dark-card-60 { background-color: rgba(255, 255, 255, 0.65); }
+
+.text-tosca-40 { color: rgba(0, 184, 148, 0.65); }
+.text-tosca-60 { color: rgba(0, 184, 148, 0.80); }
+.text-tosca-80 { color: rgba(0, 184, 148, 0.90); }
+.text-purple-60 { color: rgba(168, 85, 247, 0.80); }
+.text-purple-80 { color: rgba(168, 85, 247, 0.90); }
+.text-pink-80 { color: rgba(219, 39, 119, 0.90); }
+
+.border-tosca-20 { border-color: rgba(0, 184, 148, 0.30); }
+.border-tosca-30 { border-color: rgba(0, 184, 148, 0.40); }
+.border-purple-20 { border-color: rgba(168, 85, 247, 0.30); }
+.border-purple-30 { border-color: rgba(168, 85, 247, 0.40); }
+.border-pink-20 { border-color: rgba(219, 39, 119, 0.30); }
+.border-blue-20 { border-color: rgba(59, 130, 246, 0.30); }
+
+.shadow-tosca-10 { box-shadow: 0 0 20px rgba(0, 184, 148, 0.18); }
+.shadow-purple-10 { box-shadow: 0 0 20px rgba(168, 85, 247, 0.18); }
+
+/* Light-theme background pattern (dark dots on light bg) */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(15, 20, 25, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 20, 25, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+}
+
+.bg-dots {
+  background-image: radial-gradient(rgba(0, 184, 148, 0.18) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+}
+
+.glow-tosca {
+  box-shadow:
+    0 0 0 1px rgba(0, 184, 148, 0.20),
+    0 10px 40px -10px rgba(0, 184, 148, 0.35);
+}
+
+.glow-purple {
+  box-shadow:
+    0 0 0 1px rgba(168, 85, 247, 0.20),
+    0 10px 40px -10px rgba(168, 85, 247, 0.35);
+}
+
+.glow-pink {
+  box-shadow:
+    0 0 0 1px rgba(219, 39, 119, 0.20),
+    0 10px 40px -10px rgba(219, 39, 119, 0.35);
+}
+
+/* ─── Deck spacing system ─────────────────────────────────────────────
+   Use these classes on every card / grid / stack across the slides so
+   spacing is governed from one place. !important guarantees these win
+   over any other utility, framer-motion inline styles, or resets. */
+
+.deck-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.875rem;
+  padding: 0.625rem 0.6875rem !important;
+  box-shadow: 0 6px 24px -8px rgba(15, 20, 25, 0.08);
+}
+@media (min-width: 768px) {
+  .deck-card { padding: 0.75rem 0.875rem !important; }
+}
+
+.deck-card-lg {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 0.75rem 0.8125rem !important;
+  box-shadow: 0 8px 28px -10px rgba(15, 20, 25, 0.10);
+}
+@media (min-width: 768px) {
+  .deck-card-lg { padding: 0.875rem 1rem !important; }
+}
+
+.deck-card-sm {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 0.4375rem 0.5rem !important;
+  box-shadow: 0 4px 16px -6px rgba(15, 20, 25, 0.06);
+}
+@media (min-width: 768px) {
+  .deck-card-sm { padding: 0.5rem 0.5625rem !important; }
+}
+
+.deck-grid-2 { display: grid; grid-template-columns: 1fr; gap: 2rem !important; }
+@media (min-width: 768px) {
+  .deck-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem !important; }
+}
+
+.deck-grid-3 { display: grid; grid-template-columns: 1fr; gap: 2rem !important; }
+@media (min-width: 768px) {
+  .deck-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem !important; }
+}
+
+.deck-grid-4 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem !important; }
+@media (min-width: 768px) {
+  .deck-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem !important; }
+}
+
+.deck-grid-5 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem !important; }
+@media (min-width: 640px) { .deck-grid-5 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1024px) {
+  .deck-grid-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 2rem !important; }
+}
+
+.deck-stack > * + * { margin-top: 2rem !important; }
+.deck-stack-lg > * + * { margin-top: 2.5rem !important; }
+
+/* Content inside a card should breathe consistently regardless of children */
+.deck-card-content > * + *,
+.deck-card-lg > * + *,
+.deck-card-sm > * + * {
+  margin-top: 1.25rem;
+}
+
+/* chat.bitcoder.id signature "pop" button — offset solid shadow */
+.btn-pop {
+  border: 1.5px solid #0f1419;
+  border-radius: 0.625rem;
+  box-shadow: 3px 3px 0 0 #0f1419;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-pop:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 0 #0f1419;
+}
+.btn-pop:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 0 #0f1419;
+}
+
+.card-pop {
+  border: 1.5px solid #0f1419;
+  border-radius: 0.875rem;
+  box-shadow: 3px 3px 0 0 #0f1419;
+}
+
+.gradient-text-tosca {
+  background: linear-gradient(135deg, #34d399 0%, #00b894 50%, #047857 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.35), 0 0 40px -10px rgba(0, 184, 148, 0.25); }
+  50% { box-shadow: 0 0 0 12px rgba(0, 184, 148, 0), 0 0 80px -10px rgba(0, 184, 148, 0.40); }
+}
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float { animation: float-slow 6s ease-in-out infinite; }
